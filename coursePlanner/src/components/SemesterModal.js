@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import ClassModal from './ClassModal.js'
-import {getNameOfRequirement, getRemainingDepartments, getSemesterSeason, getSemesterYear, getCoursesInSemester, getNameOfDepartment} from './SharedFunctions.js'
+import {getRemainingDepartments, getSemesterSeason, getSemesterYear, getCoursesInSemester, getNameOfDepartment} from './SharedFunctions.js'
+import ViewSelectedCourseModal from './ViewSelectedCourseModal.js';
 
 const SemesterModal = (props) => {
   const {
-    buttonLabel,
     semester,
     className
   } = props;
@@ -36,7 +35,7 @@ const SemesterModal = (props) => {
             
             {getCoursesInSemester(semester).map((course)=>
                 <div>
-                    <ClassModal buttonLabel={getNameOfRequirement(course)} requirement_to_satisfy={course}/> <br/> {/*TODO: Change this to something that makes sense in this context.*/}
+                    <ViewSelectedCourseModal semester={semester} course={course}/> <br/>
                 </div>
             )}
         </div>
