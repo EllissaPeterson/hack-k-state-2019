@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import ClassModal from './ClassModal.js'
-import {getNameOfDepartment, getCoursesGivenDepartment, getNameOfClass} from './SharedFunctions.js'
+import {getNameOfDepartment, getCoursesGivenDepartment} from './SharedFunctions.js'
 import AddNewCourseModal from './AddNewCourseModal'
 const DepartmentModal = (props) => {
   const {

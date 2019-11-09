@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import {getSemesterSeason, getSemesterYear, getNameOfClass, getClassDescription, removeClass} from './SharedFunctions.js'
-
-function removeAndToggle(toToggle, course)
-{
-    removeClass(course);
-    toToggle.Modal('toggle');
-}
+import {getSemesterSeason, getSemesterYear, getNameOfClass, getClassDescription} from './SharedFunctions.js'
 
 const AddSelectedCourseModal = (props) => {
   const {
