@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import ClassModal from './ClassModal.js'
 import {getNameOfDepartment, getCoursesGivenDepartment, getNameOfClass} from './SharedFunctions.js'
-import addNewCourseModal from './addNewCourseModal';
+import AddNewCourseModal from './AddNewCourseModal'
 const DepartmentModal = (props) => {
   const {
     department,
@@ -24,7 +24,7 @@ const DepartmentModal = (props) => {
         <ModalBody>
           {getCoursesGivenDepartment(department).map((course)=>
             <div>
-              <addNewCourseModal course={course} semester={semester}/>
+              <AddNewCourseModal course={course} semester={semester}/> <br/>
             </div>
           )}
         </ModalBody>

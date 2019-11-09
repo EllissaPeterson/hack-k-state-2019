@@ -8,7 +8,7 @@ function removeAndToggle(toToggle, course)
     toToggle.Modal('toggle');
 }
 
-const ViewSelectedCourseModal = (props) => {
+const AddSelectedCourseModal = (props) => {
   const {
     semester,
     course,
@@ -39,4 +39,4 @@ const ViewSelectedCourseModal = (props) => {
   );
 }
 
-export default ViewSelectedCourseModal;
+export default AddSelectedCourseModal;
