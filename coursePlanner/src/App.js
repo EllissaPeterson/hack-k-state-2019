@@ -62,6 +62,7 @@ export default class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <CHeader/>
+          <RequirementModal semester_year="1986" semester_season="Spring"/>
           <br/>
           <br/>
           <Container>
