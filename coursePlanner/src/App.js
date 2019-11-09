@@ -3,6 +3,7 @@ import './App.css';
 import CHeader from './components/CustomHeader.js'
 import {Button, Input, Form} from 'reactstrap';
 import SemesterModal from './components/SemesterModal.js'
+import axios from 'axios';
 
 import {Container, Row, Col} from 'react-bootstrap';
 
@@ -20,18 +21,19 @@ export default class App extends React.Component {
         ['COM S 228', 'COM S 228', 'COM S 228', 'COM S 228', 'COM S 228'],
         ['COM S 228', 'COM S 228', 'COM S 228', 'COM S 228', 'COM S 228'],
         ['COM S 228', 'COM S 228', 'COM S 228', 'COM S 228', 'COM S 228'],
-        ['COM S 228', 'COM S 228', 'COM S 228', 'COM S 228', 'COM S 228']
+        ['COM S 228', 'COM S 228', 'COM S 228', 'COM S 228', 'COM S 227']
       ],
       courseCredits: [
         [1, 2, 3, 4, 5],
         [1, 2, 3, 4, 5],
         [1, 2, 3, 4, 5],
         [1, 2, 3, 4, 5],
-        [1, 2, 3, 4, 5],
+        [1, 2, 3, 5, 5],
         [1, 2, 3, 4, 5],
         [1, 2, 3, 4, 5],
         [1, 2, 3, 4, 5]
-      ]
+      ],
+      program: {}
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -40,6 +42,16 @@ export default class App extends React.Component {
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
+  };
+
+  componentDidMount() {
+    axios.post("http://35.224.245.97", {"action" : "getprograms"})
+    .then(res => {
+      console.log('something');
+        console.log(res.data);
+        this.setState({program : res.data});
+        
+      })
   };
 
   sendText(phoneNumber) {
@@ -117,7 +129,7 @@ export default class App extends React.Component {
     form.append( 'From', '+14154888651' );
     form.append( 'Body', message );
     form.append( 'To', phoneNumber ); //send to post author
-    console.log(phoneNumber);
+    //console.log(phoneNumber);
 
     fetch( `https://api.twilio.com/2010-04-01/Accounts/${account}/Messages.json`, {
         method: 'POST',
@@ -128,7 +140,7 @@ export default class App extends React.Component {
     } )
     .then( ( response ) => response.json() )
     .then( ( data ) => {
-        console.log( data );
+        //console.log( data );
     } );
   }
 
@@ -137,10 +149,6 @@ export default class App extends React.Component {
 
     this.sendText(this.state.phoneNumber);
   }
-
-  componentDidMount() {
-
-  }
   
   render () {
     const {
@@ -148,7 +156,6 @@ export default class App extends React.Component {
       courseNumber,
       courseCredits
     } = this.state;
-    console.log(this.state.courseNumber);
     return (
       <div className="App">
         <header className="App-header">
@@ -163,19 +170,19 @@ export default class App extends React.Component {
                 Semester
               </Col>
               <Col>
-                course 1
+                Course 1
               </Col>
               <Col>
-                course 2
+                Course 2
               </Col>
               <Col>
-                course 3
+                Course 3
               </Col>
               <Col>
-                course 4
+                Course 4
               </Col>
               <Col>
-                course 5
+                Course 5
               </Col>
               <Col>
                 Credits
@@ -183,6 +190,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
+                <br/>
                 <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
@@ -221,6 +229,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
+                <br/>
                 <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
@@ -259,6 +268,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
+                <br/>
                 <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
@@ -297,6 +307,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
+                <br/>
                 <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
@@ -335,6 +346,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
+                <br/>
                 <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
@@ -373,6 +385,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
+                <br/>
                 <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
@@ -411,6 +424,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
+                <br/>
                 <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
@@ -449,6 +463,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
+                <br/>
                 <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
