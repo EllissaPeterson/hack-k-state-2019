@@ -47,7 +47,7 @@ export default class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <CHeader/>
-          <RequirementModal buttonLabel="Requirement" requirements={["a", "b", "c"]}/>
+          <RequirementModal semester_year="1986" semester_season="Spring"/>
           <br/>
           <Button color="info" onClick={this.sendText(this.state.name)} size="lg">Send Text</Button>
           <Container>
