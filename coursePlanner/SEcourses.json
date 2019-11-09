@@ -1,0 +1,39 @@
+{
+  "requirements":[
+    {
+      "name":"US Diversity"
+      "subrequirements":[
+        {
+          "type":"oneof"
+          "courses":[
+            {
+              "fullname":"[US Diversity]"
+              "name":"PLACEHOLDER"
+              "prereqs":[]
+              "coreqs":[]
+              "credits":"3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name":"Communication Proficiency"
+      "subrequirements":[
+        {
+          "type":"allof"
+          "courses":[
+            {
+              "fullname":"Critical Thinking and Communication"
+              "name":"ENGL 150"
+              "prereqs":[]
+              "coreqs":[]
+              "credits":3
+            }
+          ]
+        },
+      ]
+    },
+
+  ]
+}
