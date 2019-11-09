@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import ClassModal from './ClassModal.js'
 
-const RequirementModal = (props) => {
+function getClasses(requirement)
+{
+  //TODO: Make this do useful work of getting required classes.
+  return ["448", "682"]
+}
+
+const ClassModal = (props) => {
   const {
     buttonLabel,
-    requirements,
+    requirement_to_satisfy,
     className
   } = props;
 
@@ -19,11 +24,11 @@ const RequirementModal = (props) => {
       <Modal isOpen={modal} toggle={toggle} className={className}>
           <br/>
           <br/>
-        <ModalHeader toggle={toggle}>Requirements Remaining</ModalHeader>
+        <ModalHeader toggle={toggle}>Available Classes</ModalHeader>
         <ModalBody>
-          {requirements.map((n)=>
+          {getClasses(requirement_to_satisfy).map((n)=>
             <div>
-              <ClassModal buttonLabel={n} requirements={requirements}/> <br/> {/*TODO: Change this to something that makes sense in this context.*/}
+              <ClassModal buttonLabel={n}/> <br/>
             </div>
           )}
         </ModalBody>
@@ -35,4 +40,4 @@ const RequirementModal = (props) => {
   );
 }
 
-export default RequirementModal;
+export default ClassModal;
