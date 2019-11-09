@@ -9,7 +9,8 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-        name: "John Doe"
+      name: "EP3PO",
+      programs: {}
     };
   }
 
