@@ -3,6 +3,7 @@ import './App.css';
 import CHeader from './components/CustomHeader.js'
 import {Button} from 'reactstrap';
 import ModalExample from './components/ModalExample.js'
+import RequirementModal from './components/RequirementModal.js'
 import {Container, Row, Col} from 'react-bootstrap';
 
 export default class App extends React.Component {
@@ -40,13 +41,13 @@ export default class App extends React.Component {
     //     console.log( data );
     // } );
   }
-
+  
   render () {
     return (
       <div className="App">
         <header className="App-header">
           <CHeader/>
-          <ModalExample buttonLabel="Modal"/>
+          <RequirementModal buttonLabel="Requirement" requirements={["a", "b", "c"]}/>
           <br/>
           <Button color="info" onClick={this.sendText(this.state.name)} size="lg">Send Text</Button>
           <Container>
