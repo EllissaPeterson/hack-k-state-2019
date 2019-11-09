@@ -3,6 +3,7 @@ import './App.css';
 import CHeader from './components/CustomHeader.js'
 import {Button} from 'reactstrap';
 import ModalExample from './components/ModalExample.js'
+import {Container, Row, Col} from 'react-bootstrap';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -46,7 +47,15 @@ export default class App extends React.Component {
         <header className="App-header">
           <CHeader/>
           <ModalExample buttonLabel="Modal"/>
-          <Button color="info" onClick={this.sendText(this.state.name)}>Send Text</Button>
+          <br/>
+          <Button color="info" onClick={this.sendText(this.state.name)} size="lg">Send Text</Button>
+          <Container>
+            <Row>
+              <Col>
+
+              </Col>
+            </Row>
+          </Container>
           <br/>
           <br/>
         </header>
