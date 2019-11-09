@@ -3,6 +3,7 @@ import './App.css';
 import CHeader from './components/CustomHeader.js'
 import {Button, Input, Form} from 'reactstrap';
 import ModalExample from './components/ModalExample.js'
+import RequirementModal from './components/RequirementModal.js'
 import {Container, Row, Col} from 'react-bootstrap';
 
 export default class App extends React.Component {
@@ -22,7 +23,7 @@ export default class App extends React.Component {
 
   sendText(phoneNumber) {
     var Base64 = require('js-base64').Base64;
-    let message = 'Hello Owen';
+    let message = 'Beep beep boop boop';
     const account = 'AC8958e14b6120c8f3342812c4cdda594e';
     const token = 'e14286eeb3f4a4eb47c1c0ab5b7dd5ff';
 
@@ -52,7 +53,7 @@ export default class App extends React.Component {
 
     this.sendText(this.state.phoneNumber);
   }
-
+  
   render () {
     const {
       phoneNumber
@@ -63,10 +64,11 @@ export default class App extends React.Component {
           <CHeader/>
           <br/>
           <br/>
-          <ModalExample buttonLabel="Modal"/>
-          <br/>
           <Container>
-          <Row>
+            <Row>
+              <Col>
+                <ModalExample buttonLabel="Modal"/>
+              </Col>
               <Col>
                 Semester
               </Col>
@@ -85,205 +87,249 @@ export default class App extends React.Component {
               <Col>
                 course 5
               </Col>
+              <Col>
+                Credits
+              </Col>
             </Row>
             <Row>
+              <Col>
+                <RequirementModal buttonLabel="Requirement" requirements={["a", "b", "c"]}/>
+              </Col>
               <Col>
                 Semester 1
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
+              </Col>
+              <Col>
+                Credits
               </Col>
             </Row>
             <Row>
+              <Col>
+              </Col>
               <Col>
                 Semester 2
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
+              </Col>
+              <Col>
+                Credits
               </Col>
             </Row>
             <Row>
+              <Col>
+              </Col>
               <Col>
                 Semester 3
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
+              </Col>
+              <Col>
+                Credits
               </Col>
             </Row>
             <Row>
+              <Col>
+              </Col>
               <Col>
                 Semester 4
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
+              </Col>
+              <Col>
+                Credits
               </Col>
             </Row>
             <Row>
+              <Col>
+              </Col>
               <Col>
                 Semester 5
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
+              </Col>
+              <Col>
+                Credits
               </Col>
             </Row>
             <Row>
+              <Col>
+              </Col>
               <Col>
                 Semester 6
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
+              </Col>
+              <Col>
+                Credits
               </Col>
             </Row>
             <Row>
+              <Col>
+              </Col>
               <Col>
                 Semester 7
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
+              </Col>
+              <Col>
+                Credits
               </Col>
             </Row>
             <Row>
-            <Col>
+              <Col>
+              </Col>
+              <Col>
                 Semester 8
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
               </Col>
               <Col>
-                course number
+                number
                 credits
+              </Col>
+              <Col>
+                Credits
               </Col>
             </Row>
           </Container>
