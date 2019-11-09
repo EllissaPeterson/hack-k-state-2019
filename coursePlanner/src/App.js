@@ -1,35 +1,57 @@
 import React from 'react';
 import Draggable from 'react-draggable';
-
-// import logo from './logo.svg';
 import './App.css';
+import CHeader from './components/CustomHeader.js'
+import {Button} from 'reactstrap';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
-          {/* Edit <code>src/App.js</code> and save to reload. */}
-          Hello World
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        name: "John Doe"
+    };
+  }
+
+  sendText(name) {
+    // var Base64 = require('js-base64').Base64;
+    // let message = 'Hello ' + name;
+    // const account = 'AC8958e14b6120c8f3342812c4cdda594e';
+    // const token = 'e14286eeb3f4a4eb47c1c0ab5b7dd5ff';
+
+    // let hash = Base64.encode( `${account}:${token}` );
+
+    // let form = new FormData();
+    // form.append( 'From', '+14154888651' );
+    // form.append( 'Body', message );
+    // form.append( 'To', '+15157201611' ); //send to post author
+
+    // fetch( `https://api.twilio.com/2010-04-01/Accounts/${account}/Messages.json`, {
+    //     method: 'POST',
+    //     headers: {
+    //     'Authorization': `Basic ${hash}`
+    //     }, 
+    //     body: form
+    // } )
+    // .then( ( response ) => response.json() )
+    // .then( ( data ) => {
+    //     console.log( data );
+    // } );
+  }
+
+  render () {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <CHeader/>
+          <Button color="info" onClick={this.sendText(this.state.name)}>Send Text</Button>
+          <Draggable>
+            <div>Yee, meet haw</div>
+          </Draggable>
           <br/>
-          My First React App "HELLO WORLD"
-        </p>
-        Want to Learn React Click on this link Thanks!
-        <a
-          className="App-link"
-          href="https://drive.google.com/file/d/1J74__LDksIHpfQnEZFitW4LRNMLXlp2Y/view?fbclid=IwAR0PyhFWSWhaY8iHsFpYfKOFbiBP1raJHBIk9rVNfIuC_WVALBc0d9ntS7c"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         The Road to Learn React
-        </a>
-        <Draggable>
-          <div>Yee, meet haw</div>
-        </Draggable>
-      </header>
-    </div>
-  );
+          <br/>
+        </header>
+      </div>
+    );
+  }
 }
-
-export default App;
