@@ -159,7 +159,6 @@ export default class App extends React.Component {
           <Container>
             <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
-                <ModalExample buttonLabel="Modal"/>
               </Col>
               <Col>
                 Semester
@@ -185,7 +184,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
-                <RequirementModal buttonLabel="Requirement" requirements={["a", "b", "c"]}/>
+                <RequirementModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
                 Semester 1

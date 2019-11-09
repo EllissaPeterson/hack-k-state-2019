@@ -28,7 +28,7 @@ const RequirementModal = (props) => {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle} size="lg">Remaining Requirements</Button>
+      <Button style={{backgroundColor: "#d66113"}} onClick={toggle} size="lg">{buttonLabel}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
           <br/>
           <br/>
