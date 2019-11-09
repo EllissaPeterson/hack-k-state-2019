@@ -221,6 +221,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
+                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
                 Semester 2
@@ -258,6 +259,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
+                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
                 Semester 3
@@ -295,6 +297,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
+                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
                 Semester 4
@@ -332,6 +335,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
+                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
                 Semester 5
@@ -369,6 +373,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
+                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
                 Semester 6
@@ -406,6 +411,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
+                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
                 Semester 7
@@ -443,6 +449,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
+                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
                 Semester 8
