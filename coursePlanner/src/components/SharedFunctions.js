@@ -64,6 +64,12 @@ function removeClass(class_id)
   console.log("LOL bye");
 }
 
+function addClass(class_id)
+{
+  //TODO
+  console.log("HEY");
+}
+
 function getCoursesGivenDepartment(department_id)
 {
   //TODO
@@ -82,3 +88,4 @@ export {getNameOfDepartment};
 export {getClassDescription};
 export {removeClass};
 export {getCoursesGivenDepartment};
+export {addClass};
