@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import {getRemainingDepartments, getSemesterSeason, getSemesterYear, getCoursesInSemester, getNameOfDepartment} from './SharedFunctions.js'
 import ViewSelectedCourseModal from './ViewSelectedCourseModal.js';
+import DepartmentModal from './DepartmentModal'
 
 const SemesterModal = (props) => {
   const {
@@ -26,7 +27,7 @@ const SemesterModal = (props) => {
             <i>Add a class</i><br/>
             {getRemainingDepartments().map((department)=>
                 <div>
-                    <Button style={{backgroundColor: "#d66113"}} onClick={toggle} size="lg">{getNameOfDepartment(department)}</Button><br/><br/>
+                    <DepartmentModal semester={semester} department={department}/> <br/>
                 </div>
             )}
         </div>

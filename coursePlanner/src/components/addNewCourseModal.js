@@ -8,9 +8,8 @@ function removeAndToggle(toToggle, course)
     toToggle.Modal('toggle');
 }
 
-const ViewSelectedCourseModal = (props) => {
+const AddSelectedCourseModal = (props) => {
   const {
-    buttonLabel,
     semester,
     course,
     className
@@ -32,7 +31,7 @@ const ViewSelectedCourseModal = (props) => {
         </ModalBody>
         <ModalFooter>
             {console.log(this)}
-          <Button color="danger" onClick={toggle}>Remove</Button>{' '} {/*TODO make this work*/}
+          <Button color="primary" onClick={toggle}>Add</Button>{' '} {/*TODO make this work*/}
           <Button color="secondary" onClick={toggle}>Back</Button>{' '}
         </ModalFooter>
       </Modal>
@@ -40,4 +39,4 @@ const ViewSelectedCourseModal = (props) => {
   );
 }
 
-export default ViewSelectedCourseModal;
+export default AddSelectedCourseModal;
