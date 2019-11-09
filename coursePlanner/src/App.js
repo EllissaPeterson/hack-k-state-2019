@@ -1,4 +1,5 @@
 import React from 'react';
+import Draggable from 'react-draggable';
 import './App.css';
 import CHeader from './components/CustomHeader.js'
 import {Button} from 'reactstrap';
@@ -44,6 +45,9 @@ export default class App extends React.Component {
         <header className="App-header">
           <CHeader/>
           <Button color="info" onClick={this.sendText(this.state.name)}>Send Text</Button>
+          <Draggable>
+            <div>Yee, meet haw</div>
+          </Draggable>
           <br/>
           <br/>
         </header>
