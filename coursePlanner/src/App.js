@@ -108,8 +108,8 @@ export default class App extends React.Component {
       + 'Credits: ' + (this.state.courseCredits[7][0] + this.state.courseCredits[7][1] 
       + this.state.courseCredits[7][2] + this.state.courseCredits[7][3] 
       + this.state.courseCredits[7][4]);
-    const account = 'AC8958e14b6120c8f3342812c4cdda594e';
-    const token = 'e14286eeb3f4a4eb47c1c0ab5b7dd5ff';
+    const account = '';
+    const token = '';
 
     let hash = Base64.encode( `${account}:${token}` );
 
@@ -157,7 +157,7 @@ export default class App extends React.Component {
           <br/>
           <br/>
           <Container>
-            <Row>
+            <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
                 <ModalExample buttonLabel="Modal"/>
               </Col>
@@ -183,7 +183,7 @@ export default class App extends React.Component {
                 Credits
               </Col>
             </Row>
-            <Row>
+            <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
                 <RequirementModal buttonLabel="Requirement" requirements={["a", "b", "c"]}/>
               </Col>
@@ -221,9 +221,7 @@ export default class App extends React.Component {
                   + courseCredits[0][4]} Credits
               </Col>
             </Row>
-            <br/>
-            <br/>
-            <Row>
+            <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
               </Col>
               <Col>
@@ -260,9 +258,7 @@ export default class App extends React.Component {
                   + courseCredits[1][4]} Credits
               </Col>
             </Row>
-            <br/>
-            <br/>
-            <Row>
+            <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
               </Col>
               <Col>
@@ -299,10 +295,8 @@ export default class App extends React.Component {
                   + courseCredits[2][4]} Credits
               </Col>
             </Row>
-            <br/>
-            <br/>
-            <Row>
-            <Col>
+            <Row style={{backgroundColor: '#6692f2'}}>
+              <Col>
               </Col>
               <Col>
                 Semester 4
@@ -338,9 +332,7 @@ export default class App extends React.Component {
                   + courseCredits[3][4]} Credits
               </Col>
             </Row>
-            <br/>
-            <br/>
-            <Row>
+            <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
               </Col>
               <Col>
@@ -377,9 +369,7 @@ export default class App extends React.Component {
                   + courseCredits[4][4]} Credits
               </Col>
             </Row>
-            <br/>
-            <br/>
-            <Row>
+            <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
               </Col>
               <Col>
@@ -416,9 +406,7 @@ export default class App extends React.Component {
                   + courseCredits[5][4]} Credits
               </Col>
             </Row>
-            <br/>
-            <br/>
-            <Row>
+            <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
               </Col>
               <Col>
@@ -455,9 +443,7 @@ export default class App extends React.Component {
                   + courseCredits[6][4]} Credits
               </Col>
             </Row>
-            <br/>
-            <br/>
-            <Row>
+            <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
               </Col>
               <Col>
@@ -497,7 +483,7 @@ export default class App extends React.Component {
           </Container>
           <br/>
           <Form onSubmit={this.handleSubmit}>
-            <Button color="info" type="submit" size="lg">Send Schedule to: </Button>
+            <Button style={{backgroundColor: "#d66113"}} type="submit" size="lg">Send Schedule to: </Button>
             <Input type="text" name="phoneNumber" id="phoneNumber" value={phoneNumber} onChange={this.handleChange} placeholder="+12345678901"/>
           </Form>
           <br/>
