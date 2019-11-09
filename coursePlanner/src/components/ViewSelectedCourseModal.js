@@ -32,7 +32,7 @@ const ViewSelectedCourseModal = (props) => {
         </ModalBody>
         <ModalFooter>
             {console.log(this)}
-          <Button color="danger" onClick={removeAndToggle(this, course)}>Remove</Button>{' '}
+          <Button color="danger" onClick={toggle}>Remove</Button>{' '} {/*TODO make this work*/}
           <Button color="secondary" onClick={toggle}>Back</Button>{' '}
         </ModalFooter>
       </Modal>
