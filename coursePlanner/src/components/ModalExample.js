@@ -13,7 +13,7 @@ const ModalExample = (props) => {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle}>{buttonLabel}</Button>
+      <Button color="danger" onClick={toggle} size="lg">{buttonLabel}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
           <br/>
           <br/>
