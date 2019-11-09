@@ -27,7 +27,7 @@ export default function CHeader() {
             <div className={classes.root}>
               <AppBar className={classes.bar}>
                 <Toolbar variant="dense">
-                    <IconButton edge="start" className={classes.menuButton} href ="/MainPage">
+                    <IconButton edge="start" className={classes.menuButton} onClick="">
                     <img src="logo.png" alt="Logo" height={30} />
                     </IconButton>
                   <Typography variant="h6" color="inherit">
