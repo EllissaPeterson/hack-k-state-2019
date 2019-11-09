@@ -1,18 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import ClassModal from './ClassModal.js'
-
-function getRemainingRequirements()
-{
-  //TODO: Make this do useful work.
-  return [1,2,3,4,5];
-}
-
-function getNameOfRequirement(requirement_id)
-{
-  //TODO: Return the name of the requirement.
-  return "Bruh Studies";
-}
+import {getNameOfRequirement, getRemainingRequirements} from './SharedFunctions.js'
 
 const RequirementModal = (props) => {
   const {

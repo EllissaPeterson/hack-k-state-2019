@@ -1,23 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import {getNameOfRequirement, getNameOfClass, getClasses} from './SharedFunctions'
 
-function getClasses(requirement_id)
-{
-  //TODO: Return an array of class ids that satisfy the requirements.
-  return ["448", "682"]
-}
-
-function getNameOfRequirement(requirement_id)
-{
-  //TODO: Return the name of the requirement.
-  return "Bruh Studies";
-}
-
-function getNameOfClass(class_id)
-{
-  //TODO: Return the name of the class
-  return "Ya Bruh or Nah Bruh: Modern Bruh Culture"
-}
 
 const ClassModal = (props) => {
   const {

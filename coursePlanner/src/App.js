@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import CHeader from './components/CustomHeader.js'
 import {Button, Input, Form} from 'reactstrap';
-import ModalExample from './components/ModalExample.js'
-import RequirementModal from './components/RequirementModal.js'
+import SemesterModal from './components/SemesterModal.js'
+
 import {Container, Row, Col} from 'react-bootstrap';
 
 export default class App extends React.Component {
@@ -153,7 +153,6 @@ export default class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <CHeader/>
-          <RequirementModal semester_year="1986" semester_season="Spring"/>
           <br/>
           <br/>
           <Container>
@@ -184,7 +183,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
-                <RequirementModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
+                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
                 Semester 1
