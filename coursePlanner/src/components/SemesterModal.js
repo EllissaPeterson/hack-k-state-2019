@@ -26,7 +26,7 @@ const SemesterModal = (props) => {
             <i>Add a class</i><br/>
             {getRemainingDepartments().map((department)=>
                 <div>
-                    <Button color="danger" onClick={toggle} size="lg">{getNameOfDepartment(department)}</Button><br/><br/>
+                    <Button style={{backgroundColor: "#d66113"}} onClick={toggle} size="lg">{getNameOfDepartment(department)}</Button><br/><br/>
                 </div>
             )}
         </div>
