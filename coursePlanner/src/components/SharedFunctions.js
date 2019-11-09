@@ -19,7 +19,7 @@ function getClasses(requirement_id)
 function getNameOfClass(class_id)
 {
   //TODO: Return the name of the class
-  return "Ya Bruh or Nah Bruh: Modern Bruh Culture"
+  return "EECS 210";
 }
 
 function getRemainingDepartments()
@@ -52,6 +52,18 @@ function getNameOfDepartment(department_id)
   return "Office of Memes"
 }
 
+function getClassDescription(class_id)
+{
+  //TODO
+  return "'Well, Seymore, I made it, despite your directions.' 'Ah, superintendent Chalmers! I hope you're prepared for an unforgettable luncheon!'"
+}
+
+function removeClass(class_id)
+{
+  //TODO
+  console.log("LOL bye");
+}
+
 export {getRemainingRequirements};
 export {getNameOfRequirement};
 export {getClasses};
@@ -61,3 +73,5 @@ export {getCoursesInSemester};
 export {getSemesterSeason};
 export {getSemesterYear};
 export {getNameOfDepartment};
+export {getClassDescription};
+export {removeClass};
