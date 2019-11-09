@@ -11,6 +11,27 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
+      phoneNumber: "",
+      courseNumber: [
+        ['COM S 228', 'COM S 228', 'COM S 228', 'COM S 228', 'COM S 228'],
+        ['COM S 228', 'COM S 228', 'COM S 228', 'COM S 228', 'COM S 228'],
+        ['COM S 228', 'COM S 228', 'COM S 228', 'COM S 228', 'COM S 228'],
+        ['COM S 228', 'COM S 228', 'COM S 228', 'COM S 228', 'COM S 228'],
+        ['COM S 228', 'COM S 228', 'COM S 228', 'COM S 228', 'COM S 228'],
+        ['COM S 228', 'COM S 228', 'COM S 228', 'COM S 228', 'COM S 228'],
+        ['COM S 228', 'COM S 228', 'COM S 228', 'COM S 228', 'COM S 228'],
+        ['COM S 228', 'COM S 228', 'COM S 228', 'COM S 228', 'COM S 228']
+      ],
+      courseCredits: [
+        [1, 2, 3, 4, 5],
+        [1, 2, 3, 4, 5],
+        [1, 2, 3, 4, 5],
+        [1, 2, 3, 4, 5],
+        [1, 2, 3, 4, 5],
+        [1, 2, 3, 4, 5],
+        [1, 2, 3, 4, 5],
+        [1, 2, 3, 4, 5]
+      ]
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -23,7 +44,70 @@ export default class App extends React.Component {
 
   sendText(phoneNumber) {
     var Base64 = require('js-base64').Base64;
-    let message = 'Beep beep boop boop';
+    let message = 'Semester 1: ' + this.state.courseNumber[0][0] + ', ' 
+      + this.state.courseNumber[0][1] + ', '
+      + this.state.courseNumber[0][2] + ', '
+      + this.state.courseNumber[0][3] + ', '
+      + this.state.courseNumber[0][4] + '\n'
+      + 'Credits: ' + (this.state.courseCredits[0][0] + this.state.courseCredits[0][1] 
+      + this.state.courseCredits[0][2] + this.state.courseCredits[0][3] 
+      + this.state.courseCredits[0][4]) + '\n\n'
+      + 'Semester 2: ' + this.state.courseNumber[1][0] + ', '
+      + this.state.courseNumber[1][1] + ', '
+      + this.state.courseNumber[1][2] + ', '
+      + this.state.courseNumber[1][3] + ', '
+      + this.state.courseNumber[1][4] + '\n'
+      + 'Credits: ' + (this.state.courseCredits[1][0] + this.state.courseCredits[1][1] 
+      + this.state.courseCredits[1][2] + this.state.courseCredits[1][3] 
+      + this.state.courseCredits[1][4]) + '\n\n'
+      + 'Semester 3: ' + this.state.courseNumber[2][0] + ', '
+      + this.state.courseNumber[2][1] + ', '
+      + this.state.courseNumber[2][2] + ', '
+      + this.state.courseNumber[2][3] + ', '
+      + this.state.courseNumber[2][4] + '\n'
+      + 'Credits: ' + (this.state.courseCredits[2][0] + this.state.courseCredits[2][1] 
+      + this.state.courseCredits[2][2] + this.state.courseCredits[2][3] 
+      + this.state.courseCredits[2][4]) + '\n\n'
+      + 'Semester 4: ' + this.state.courseNumber[3][0] + ', '
+      + this.state.courseNumber[3][1] + ', '
+      + this.state.courseNumber[3][2] + ', '
+      + this.state.courseNumber[3][3] + ', '
+      + this.state.courseNumber[3][4] + '\n'
+      + 'Credits: ' + (this.state.courseCredits[3][0] + this.state.courseCredits[3][1] 
+      + this.state.courseCredits[3][2] + this.state.courseCredits[3][3] 
+      + this.state.courseCredits[3][4]) + '\n\n'
+      + 'Semester 5: ' + this.state.courseNumber[4][0] + ', '
+      + this.state.courseNumber[4][1] + ', '
+      + this.state.courseNumber[4][2] + ', '
+      + this.state.courseNumber[4][3] + ', '
+      + this.state.courseNumber[4][4] + '\n'
+      + 'Credits: ' + (this.state.courseCredits[4][0] + this.state.courseCredits[4][1] 
+      + this.state.courseCredits[4][2] + this.state.courseCredits[4][3] 
+      + this.state.courseCredits[4][4]) + '\n\n'
+      + 'Semester 6: ' + this.state.courseNumber[5][0] + ', '
+      + this.state.courseNumber[5][1] + ', '
+      + this.state.courseNumber[5][2] + ', '
+      + this.state.courseNumber[5][3] + ', '
+      + this.state.courseNumber[5][4] + '\n'
+      + 'Credits: ' + (this.state.courseCredits[5][0] + this.state.courseCredits[5][1] 
+      + this.state.courseCredits[5][2] + this.state.courseCredits[5][3] 
+      + this.state.courseCredits[5][4]) + '\n\n'
+      + 'Semester 7: ' + this.state.courseNumber[6][0] + ', '
+      + this.state.courseNumber[6][1] + ', '
+      + this.state.courseNumber[6][2] + ', '
+      + this.state.courseNumber[6][3] + ', '
+      + this.state.courseNumber[6][4] + '\n'
+      + 'Credits: ' + (this.state.courseCredits[6][0] + this.state.courseCredits[6][1] 
+      + this.state.courseCredits[6][2] + this.state.courseCredits[6][3] 
+      + this.state.courseCredits[6][4]) + '\n\n'  
+      + 'Semester 8: ' + this.state.courseNumber[7][0] + ', '
+      + this.state.courseNumber[7][1] + ', '
+      + this.state.courseNumber[7][2] + ', '
+      + this.state.courseNumber[7][3] + ', '
+      + this.state.courseNumber[7][4] + '\n'
+      + 'Credits: ' + (this.state.courseCredits[7][0] + this.state.courseCredits[7][1] 
+      + this.state.courseCredits[7][2] + this.state.courseCredits[7][3] 
+      + this.state.courseCredits[7][4]);
     const account = 'AC8958e14b6120c8f3342812c4cdda594e';
     const token = 'e14286eeb3f4a4eb47c1c0ab5b7dd5ff';
 
@@ -53,11 +137,18 @@ export default class App extends React.Component {
 
     this.sendText(this.state.phoneNumber);
   }
+
+  componentDidMount() {
+
+  }
   
   render () {
     const {
-      phoneNumber
+      phoneNumber,
+      courseNumber,
+      courseCredits
     } = this.state;
+    console.log(this.state.courseNumber);
     return (
       <div className="App">
         <header className="App-header">
@@ -100,29 +191,38 @@ export default class App extends React.Component {
                 Semester 1
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[0][0]}
+                <br/>
+                {courseCredits[0][0]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[0][1]}
+                <br/>
+                {courseCredits[0][1]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[0][2]}
+                <br/>
+                {courseCredits[0][2]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[0][3]}
+                <br/>
+                {courseCredits[0][3]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[0][4]}
+                <br/>
+                {courseCredits[0][4]} credits
               </Col>
               <Col>
-                Credits
+                {courseCredits[0][0] + courseCredits[0][1] 
+                  + courseCredits[0][2] + courseCredits[0][3] 
+                  + courseCredits[0][4]} Credits
               </Col>
             </Row>
+            <br/>
+            <br/>
             <Row>
               <Col>
               </Col>
@@ -130,29 +230,38 @@ export default class App extends React.Component {
                 Semester 2
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[1][0]}
+                <br/>
+                {courseCredits[1][0]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[1][1]}
+                <br/>
+                {courseCredits[1][1]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[1][2]}
+                <br/>
+                {courseCredits[1][2]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[1][3]}
+                <br/>
+                {courseCredits[1][3]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[1][4]}
+                <br/>
+                {courseCredits[1][4]} credits
               </Col>
               <Col>
-                Credits
+              {courseCredits[1][0] + courseCredits[1][1] 
+                  + courseCredits[1][2] + courseCredits[1][3] 
+                  + courseCredits[1][4]} Credits
               </Col>
             </Row>
+            <br/>
+            <br/>
             <Row>
               <Col>
               </Col>
@@ -160,59 +269,77 @@ export default class App extends React.Component {
                 Semester 3
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[2][0]}
+                <br/>
+                {courseCredits[2][0]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[2][1]}
+                <br/>
+                {courseCredits[2][1]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[2][2]}
+                <br/>
+                {courseCredits[2][2]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[2][3]}
+                <br/>
+                {courseCredits[2][3]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[2][4]}
+                <br/>
+                {courseCredits[2][4]} credits
               </Col>
               <Col>
-                Credits
+              {courseCredits[2][0] + courseCredits[2][1] 
+                  + courseCredits[2][2] + courseCredits[2][3] 
+                  + courseCredits[2][4]} Credits
               </Col>
             </Row>
+            <br/>
+            <br/>
             <Row>
-              <Col>
+            <Col>
               </Col>
               <Col>
                 Semester 4
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[3][0]}
+                <br/>
+                {courseCredits[3][0]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[3][1]}
+                <br/>
+                {courseCredits[3][1]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[3][2]}
+                <br/>
+                {courseCredits[3][2]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[3][3]}
+                <br/>
+                {courseCredits[3][3]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[3][4]}
+                <br/>
+                {courseCredits[3][4]} credits
               </Col>
               <Col>
-                Credits
+              {courseCredits[3][0] + courseCredits[3][1] 
+                  + courseCredits[3][2] + courseCredits[3][3] 
+                  + courseCredits[3][4]} Credits
               </Col>
             </Row>
+            <br/>
+            <br/>
             <Row>
               <Col>
               </Col>
@@ -220,29 +347,38 @@ export default class App extends React.Component {
                 Semester 5
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[4][0]}
+                <br/>
+                {courseCredits[4][0]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[4][1]}
+                <br/>
+                {courseCredits[4][1]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[4][2]}
+                <br/>
+                {courseCredits[4][2]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[4][3]}
+                <br/>
+                {courseCredits[4][3]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[4][4]}
+                <br/>
+                {courseCredits[4][4]} credits
               </Col>
               <Col>
-                Credits
+              {courseCredits[4][0] + courseCredits[4][1] 
+                  + courseCredits[4][2] + courseCredits[4][3] 
+                  + courseCredits[4][4]} Credits
               </Col>
             </Row>
+            <br/>
+            <br/>
             <Row>
               <Col>
               </Col>
@@ -250,29 +386,38 @@ export default class App extends React.Component {
                 Semester 6
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[5][0]}
+                <br/>
+                {courseCredits[5][0]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[5][1]}
+                <br/>
+                {courseCredits[5][1]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[5][2]}
+                <br/>
+                {courseCredits[5][2]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[5][3]}
+                <br/>
+                {courseCredits[5][3]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[5][4]}
+                <br/>
+                {courseCredits[5][4]} credits
               </Col>
               <Col>
-                Credits
+              {courseCredits[5][0] + courseCredits[5][1] 
+                  + courseCredits[5][2] + courseCredits[5][3] 
+                  + courseCredits[5][4]} Credits
               </Col>
             </Row>
+            <br/>
+            <br/>
             <Row>
               <Col>
               </Col>
@@ -280,29 +425,38 @@ export default class App extends React.Component {
                 Semester 7
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[6][0]}
+                <br/>
+                {courseCredits[6][0]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[6][1]}
+                <br/>
+                {courseCredits[6][1]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[6][2]}
+                <br/>
+                {courseCredits[6][2]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[6][3]}
+                <br/>
+                {courseCredits[6][3]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[6][4]}
+                <br/>
+                {courseCredits[6][4]} credits
               </Col>
               <Col>
-                Credits
+              {courseCredits[6][0] + courseCredits[6][1] 
+                  + courseCredits[6][2] + courseCredits[6][3] 
+                  + courseCredits[6][4]} Credits
               </Col>
             </Row>
+            <br/>
+            <br/>
             <Row>
               <Col>
               </Col>
@@ -310,33 +464,41 @@ export default class App extends React.Component {
                 Semester 8
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[7][0]}
+                <br/>
+                {courseCredits[7][0]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[7][1]}
+                <br/>
+                {courseCredits[7][1]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[7][2]}
+                <br/>
+                {courseCredits[7][2]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[7][3]}
+                <br/>
+                {courseCredits[7][3]} credits
               </Col>
               <Col>
-                number
-                credits
+                {courseNumber[7][4]}
+                <br/>
+                {courseCredits[7][4]} credits
               </Col>
               <Col>
-                Credits
+              {courseCredits[7][0] + courseCredits[7][1] 
+                  + courseCredits[7][2] + courseCredits[7][3] 
+                  + courseCredits[7][4]} Credits
               </Col>
             </Row>
           </Container>
+          <br/>
           <Form onSubmit={this.handleSubmit}>
-            <Input type="text" name="phoneNumber" id="phoneNumber" value={phoneNumber} onChange={this.handleChange} placeholder="+12345678901"/>
             <Button color="info" type="submit" size="lg">Send Schedule to: </Button>
+            <Input type="text" name="phoneNumber" id="phoneNumber" value={phoneNumber} onChange={this.handleChange} placeholder="+12345678901"/>
           </Form>
           <br/>
           <br/>
