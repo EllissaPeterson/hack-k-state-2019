@@ -158,7 +158,6 @@ export default class App extends React.Component {
           <Container>
             <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
-              <SemesterModal semester="0"/>
               </Col>
               <Col>
                 Semester
@@ -184,6 +183,7 @@ export default class App extends React.Component {
             </Row>
             <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
+                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
               </Col>
               <Col>
                 Semester 1
