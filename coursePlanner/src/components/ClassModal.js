@@ -15,7 +15,7 @@ const ClassModal = (props) => {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle} size="lg">{getNameOfRequirement(requirement_to_satisfy)}</Button>
+      <Button style={{backgroundColor: "#d66113"}} onClick={toggle} size="lg">{getNameOfRequirement(requirement_to_satisfy)}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
           <br/>
           <br/>
@@ -23,7 +23,7 @@ const ClassModal = (props) => {
         <ModalBody>
           {getClasses(requirement_to_satisfy).map((n)=>
             <div>
-              <Button color="danger" size="lg">{getNameOfClass(n)}</Button> <br/> <br/>
+              <Button style={{backgroundColor: "#d66113"}} size="lg">{getNameOfClass(n)}</Button> <br/> <br/>
             </div>
           )}
         </ModalBody>
