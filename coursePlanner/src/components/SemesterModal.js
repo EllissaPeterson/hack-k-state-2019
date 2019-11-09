@@ -5,6 +5,7 @@ import ViewSelectedCourseModal from './ViewSelectedCourseModal.js';
 
 const SemesterModal = (props) => {
   const {
+    buttonLabel,
     semester,
     className
   } = props;
