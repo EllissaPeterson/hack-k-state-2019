@@ -43,7 +43,13 @@ const ViewSelectedCourseModal = (props) => {
         </ModalBody>
         <ModalFooter>
             {console.log(this)}
-          <Button color="danger" onClick={toggle}><a onclick={removeClass(semester, course)}>Remove</a></Button>{' '} {/*TODO make this work*/}
+
+          <Button color="danger" onClick={function(){
+            //this.toggle();
+            setModal(!modal);
+            removeClass(semester, course);
+          }.bind(this, semester, course)}>Remove</Button>{' '} {/*TODO make this work*/}
+
           <Button color="secondary" onClick={toggle}>Back</Button>{' '}
         </ModalFooter>
       </Modal>
