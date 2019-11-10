@@ -1,24 +1,4 @@
-import { withThemeCreator } from '@material-ui/styles';
-
 var axios = require('axios')
-
-function getRemainingRequirements()
-{
-  //TODO: Make this do useful work.
-  return [1,2,3,4,5];
-}
-
-function getNameOfRequirement(requirement_id)
-{
-  //TODO: Return the name of the requirement.
-  return "Bruh Studies";
-}
-
-function getClasses(requirement_id)
-{
-  //TODO: Return an array of class ids that satisfy the requirements.
-  return ["448", "682"]
-}
 
 function getNameOfClass(class_id)
 {
@@ -85,16 +65,13 @@ function getCoursesGivenDepartment(department_id)
   return [1,2,3,4,5,6,7,8,9];
 }
 
-export {getRemainingRequirements};
-export {getNameOfRequirement};
-export {getClasses};
-export {getNameOfClass};
-export {getRemainingDepartments};
-export {getCoursesInSemester};
-export {getSemesterSeason};
-export {getSemesterYear};
-export {getNameOfDepartment};
-export {getClassDescription};
-export {removeClass};
-export {getCoursesGivenDepartment};
-export {addClass};
+export {getNameOfClass};//
+export {getRemainingDepartments};//
+export {getCoursesInSemester};//
+export {getSemesterSeason};//
+export {getSemesterYear};//
+export {getNameOfDepartment};//
+export {getClassDescription};//
+export {removeClass};//
+export {getCoursesGivenDepartment};//
+export {addClass}; //

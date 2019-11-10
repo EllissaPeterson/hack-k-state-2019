@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import {getRemainingDepartments, getSemesterSeason, getSemesterYear, getCoursesInSemester, getNameOfDepartment} from './SharedFunctions.js'
+import {getRemainingDepartments, getSemesterSeason, getSemesterYear, getCoursesInSemester} from './SharedFunctions.js'
 import ViewSelectedCourseModal from './ViewSelectedCourseModal.js';
 import DepartmentModal from './DepartmentModal'
 
