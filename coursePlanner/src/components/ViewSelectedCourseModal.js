@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import {getSemesterSeason, getSemesterYear, getNameOfClass, getClassDescription} from './SharedFunctions.js'
+import {getSemesterSeason, getSemesterYear, getNameOfClass, getClassDescription, removeClass} from './SharedFunctions.js'
 
 const ViewSelectedCourseModal = (props) => {
   const {
@@ -12,20 +12,22 @@ const ViewSelectedCourseModal = (props) => {
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
-
+  var course_name = "zsdfsdfzsdf";
+  getNameOfClass(course).then((_course_name) => (course_name = _course_name));
+  console.log(course_name);
   return (
     <div>
-    <Button color="danger" onClick={toggle} size="lg">{getNameOfClass(course)}</Button>
+      
+      <Button color="danger" onClick={toggle} size="lg">{course_name}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
           <br/>
           <br/>
-        <ModalHeader toggle={toggle}>{getSemesterSeason(semester)} {getSemesterYear(semester)}: {getNameOfClass(course)}</ModalHeader>
+          <ModalHeader toggle={toggle}>{getSemesterSeason(semester)} {getSemesterYear(semester)}: {course_name}</ModalHeader>
         <ModalBody>
           {getClassDescription(course)}
         </ModalBody>
         <ModalFooter>
-            {console.log(this)}
-          <Button color="danger" onClick={toggle}>Remove</Button>{' '} {/*TODO make this work*/}
+          <Button color="danger" onClick={removeClass}><a onClick={toggle} >Remove</a></Button>{' '} {/*TODO make this work*/}
           <Button color="secondary" onClick={toggle}>Back</Button>{' '}
         </ModalFooter>
       </Modal>
