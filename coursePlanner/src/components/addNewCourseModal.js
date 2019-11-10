@@ -45,7 +45,7 @@ const AddSelectedCourseModal = (props) => {
         <ModalFooter>
             {console.log(this)}
 
-          <Button color="primary" onClick={toggle}><a onclick={addClass(semester, course)}>Add</a></Button>{' '} {/*TODO make this work*/}
+          <Button color="primary" onClick={toggle}><a onClick={addClass(semester, course)}>Add</a></Button>{' '} {/*TODO make this work*/}
 
           <Button color="secondary" onClick={toggle}>Back</Button>{' '}
         </ModalFooter>
