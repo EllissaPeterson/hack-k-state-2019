@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import CHeader from './components/CustomHeader.js'
-import {Button, Input, Form} from 'reactstrap';
+import {Button, Input, Form, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import SemesterModal from './components/SemesterModal.js'
 import axios from 'axios';
 
@@ -10,7 +10,7 @@ import {Container, Row, Col} from 'react-bootstrap';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
       phoneNumber: "",
       courseNumber: [
@@ -33,12 +33,21 @@ export default class App extends React.Component {
         [1, 2, 3, 4, 5],
         [1, 2, 3, 4, 5]
       ],
-      program: {}
+      program: {},
+      dropdownOpen: false
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    this.toggle = this.toggle.bind(this);
   }
+
+  toggle() {
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }));
+  };
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -162,6 +171,18 @@ export default class App extends React.Component {
           <CHeader/>
           <br/>
           <br/>
+          <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+            <DropdownToggle caret>
+              Button Dropdown
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem header>Header</DropdownItem>
+              <DropdownItem disabled>Action</DropdownItem>
+              <DropdownItem>Another Action</DropdownItem>
+              <DropdownItem divider />
+              <DropdownItem>Another Action</DropdownItem>
+            </DropdownMenu>
+          </ButtonDropdown>
           <Container>
             <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
