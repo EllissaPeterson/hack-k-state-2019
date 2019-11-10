@@ -47,6 +47,14 @@ function setCatalog(catalog){
   current_catalog.current_catalog = catalog;
 }
 
+function getCatColor(check_catalog){
+  if(current_catalog.current_catalog === check_catalog){
+    return "primary";
+  }else{
+    return "secondary";
+  }
+}
+
 function getNameOfClass(class_id){
   //let rawdata = fs.readFileSync('iastate_catalog.json');
   //let data = JSON.parse(rawdata);
@@ -163,3 +171,4 @@ export {removeClass};//
 export {getCoursesGivenDepartment};//
 export {addClass}; //
 export {setCatalog};//
+export {getCatColor};//
