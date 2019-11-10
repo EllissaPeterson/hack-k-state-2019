@@ -7,7 +7,6 @@ function getNameOfClass(class_id)
     .then(res => {
       return res.data[class_id].course_name;
   })
-  console.log(x);
   return x;
 }
 
