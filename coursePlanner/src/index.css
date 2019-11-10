@@ -19,3 +19,7 @@ code {
 .right_aligned {
   float: right;
 }
+
+.center_aligned {
+  float: center;
+}

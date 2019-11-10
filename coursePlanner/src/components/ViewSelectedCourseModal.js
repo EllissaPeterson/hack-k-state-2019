@@ -18,9 +18,17 @@ const ViewSelectedCourseModal = (props) => {
     'white-space':'pre-line'
   }
 
+  const buttonstyle = {
+    "margin-top":"0px",
+    "margin-bottom":"-10px",
+    //"border":"none",
+    //"margin":"-20px"
+    //"padding":"0px"
+  }
+
   return (
     <div>
-    <Button color="danger" onClick={toggle} size="lg">{getShortNameOfClass(course)}</Button>
+    <Button style={buttonstyle} color="danger" onClick={toggle} size="lg">{getShortNameOfClass(course)}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
           <br/>
 
