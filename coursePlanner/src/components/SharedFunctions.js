@@ -53,7 +53,7 @@ function getNameOfClass(class_id){
   //console.log(student);
   //let name = data[class_id].course_name;
   let name = catalog().data[class_id].course_name;
-  console.log(name);
+  //console.log(name);
   return name;
 }
 
@@ -106,8 +106,9 @@ function getNameOfDepartment(department_id)
 
 function getClassDescription(class_id)
 {
-  //TODO
-  return "'Well, Seymore, I made it, despite your directions.' 'Ah, superintendent Chalmers! I hope you're prepared for an unforgettable luncheon!'"
+  let desc = catalog().data[class_id].desc;
+  return desc;
+  //return "'Well, Seymore, I made it, despite your directions.' 'Ah, superintendent Chalmers! I hope you're prepared for an unforgettable luncheon!'"
 }
 
 function removeClass(class_id)
@@ -124,8 +125,7 @@ function addClass(class_id)
 
 function getCoursesGivenDepartment(department_id)
 {
-  //TODO
-  // Course name? Dept + num
+  // Course name = Dept + num
   let coursenames = [];
 
   for(let i = 0; i < catalog().data.length; i++){
