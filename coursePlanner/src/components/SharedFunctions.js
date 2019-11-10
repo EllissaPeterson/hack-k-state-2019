@@ -1,14 +1,10 @@
 import iastate_catalog from '../catalogs/iastate_catalog'
 import kstate_catalog from '../catalogs/kstate_catalog'
 import current_catalog from '../catalogs/current_catalog'
-
 //import fs from 'fs';
-
 
 var axios = require('axios')
 //const fs = require('fs');
-
-
 
 /*
 function getNameOfClass(class_id)
