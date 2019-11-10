@@ -49,7 +49,12 @@ function getNameOfClass(class_id){
   //console.log(student);
   //let name = data[class_id].course_name;
   let name = catalog().data[class_id].course_name;
-  console.log(name);
+  //console.log(name);
+  return name;
+}
+
+function getShortNameOfClass(class_id){
+  let name = catalog().data[class_id].dept + " " + catalog().data[class_id].num;
   return name;
 }
 
@@ -102,8 +107,9 @@ function getNameOfDepartment(department_id)
 
 function getClassDescription(class_id)
 {
-  //TODO
-  return "'Well, Seymore, I made it, despite your directions.' 'Ah, superintendent Chalmers! I hope you're prepared for an unforgettable luncheon!'"
+  let desc = catalog().data[class_id].desc;
+  return desc;
+  //return "'Well, Seymore, I made it, despite your directions.' 'Ah, superintendent Chalmers! I hope you're prepared for an unforgettable luncheon!'"
 }
 
 function removeClass(class_id)
@@ -118,25 +124,31 @@ function addClass(class_id)
   console.log("HEY");
 }
 
+
+
 function getCoursesGivenDepartment(department_id)
 {
-  //TODO
-  // Course name? Dept + num
-  let coursenames = [];
+  // Course name = Dept + num
+  // NEVERMIND RETURN COURSE ID's (indices)
+  //let coursenames = [];
+  let course_ids = [];
 
   for(let i = 0; i < catalog().data.length; i++){
     let course = catalog().data[i]
     if(department_id == course.dept){
-      coursenames.push(course.dept + " " + course.num);
+      //coursenames.push(course.dept + " " + course.num);
+      course_ids.push(i);
     }
   }
 
-  console.log(coursenames);
-  return coursenames;
+  //console.log(coursenames);
+  return course_ids;
+  //return coursenames;
   //return [1,2,3,4,5,6,7,8,9];
 }
 
 export {getNameOfClass};//
+export {getShortNameOfClass};//
 export {getRemainingDepartments};//
 export {getCoursesInSemester};//
 export {getSemesterSeason};//
