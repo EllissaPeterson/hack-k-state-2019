@@ -4,13 +4,14 @@ import CHeader from './components/CustomHeader.js'
 import {Button, Input, Form, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import SemesterModal from './components/SemesterModal.js'
 import axios from 'axios';
+import {setCatalog, getCatColor} from './components/SharedFunctions.js';
 
 import {Container, Row, Col} from 'react-bootstrap';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       phoneNumber: "",
       courseNumber: [
@@ -59,75 +60,75 @@ export default class App extends React.Component {
       console.log('something');
         console.log(res.data);
         this.setState({program : res.data});
-        
+
       })
   };
 
   sendText(phoneNumber) {
     var Base64 = require('js-base64').Base64;
-    let message = 'Semester 1: ' + this.state.courseNumber[0][0] + ', ' 
+    let message = 'Semester 1: ' + this.state.courseNumber[0][0] + ', '
       + this.state.courseNumber[0][1] + ', '
       + this.state.courseNumber[0][2] + ', '
       + this.state.courseNumber[0][3] + ', '
       + this.state.courseNumber[0][4] + '\n'
-      + 'Credits: ' + (this.state.courseCredits[0][0] + this.state.courseCredits[0][1] 
-      + this.state.courseCredits[0][2] + this.state.courseCredits[0][3] 
+      + 'Credits: ' + (this.state.courseCredits[0][0] + this.state.courseCredits[0][1]
+      + this.state.courseCredits[0][2] + this.state.courseCredits[0][3]
       + this.state.courseCredits[0][4]) + '\n\n'
       + 'Semester 2: ' + this.state.courseNumber[1][0] + ', '
       + this.state.courseNumber[1][1] + ', '
       + this.state.courseNumber[1][2] + ', '
       + this.state.courseNumber[1][3] + ', '
       + this.state.courseNumber[1][4] + '\n'
-      + 'Credits: ' + (this.state.courseCredits[1][0] + this.state.courseCredits[1][1] 
-      + this.state.courseCredits[1][2] + this.state.courseCredits[1][3] 
+      + 'Credits: ' + (this.state.courseCredits[1][0] + this.state.courseCredits[1][1]
+      + this.state.courseCredits[1][2] + this.state.courseCredits[1][3]
       + this.state.courseCredits[1][4]) + '\n\n'
       + 'Semester 3: ' + this.state.courseNumber[2][0] + ', '
       + this.state.courseNumber[2][1] + ', '
       + this.state.courseNumber[2][2] + ', '
       + this.state.courseNumber[2][3] + ', '
       + this.state.courseNumber[2][4] + '\n'
-      + 'Credits: ' + (this.state.courseCredits[2][0] + this.state.courseCredits[2][1] 
-      + this.state.courseCredits[2][2] + this.state.courseCredits[2][3] 
+      + 'Credits: ' + (this.state.courseCredits[2][0] + this.state.courseCredits[2][1]
+      + this.state.courseCredits[2][2] + this.state.courseCredits[2][3]
       + this.state.courseCredits[2][4]) + '\n\n'
       + 'Semester 4: ' + this.state.courseNumber[3][0] + ', '
       + this.state.courseNumber[3][1] + ', '
       + this.state.courseNumber[3][2] + ', '
       + this.state.courseNumber[3][3] + ', '
       + this.state.courseNumber[3][4] + '\n'
-      + 'Credits: ' + (this.state.courseCredits[3][0] + this.state.courseCredits[3][1] 
-      + this.state.courseCredits[3][2] + this.state.courseCredits[3][3] 
+      + 'Credits: ' + (this.state.courseCredits[3][0] + this.state.courseCredits[3][1]
+      + this.state.courseCredits[3][2] + this.state.courseCredits[3][3]
       + this.state.courseCredits[3][4]) + '\n\n'
       + 'Semester 5: ' + this.state.courseNumber[4][0] + ', '
       + this.state.courseNumber[4][1] + ', '
       + this.state.courseNumber[4][2] + ', '
       + this.state.courseNumber[4][3] + ', '
       + this.state.courseNumber[4][4] + '\n'
-      + 'Credits: ' + (this.state.courseCredits[4][0] + this.state.courseCredits[4][1] 
-      + this.state.courseCredits[4][2] + this.state.courseCredits[4][3] 
+      + 'Credits: ' + (this.state.courseCredits[4][0] + this.state.courseCredits[4][1]
+      + this.state.courseCredits[4][2] + this.state.courseCredits[4][3]
       + this.state.courseCredits[4][4]) + '\n\n'
       + 'Semester 6: ' + this.state.courseNumber[5][0] + ', '
       + this.state.courseNumber[5][1] + ', '
       + this.state.courseNumber[5][2] + ', '
       + this.state.courseNumber[5][3] + ', '
       + this.state.courseNumber[5][4] + '\n'
-      + 'Credits: ' + (this.state.courseCredits[5][0] + this.state.courseCredits[5][1] 
-      + this.state.courseCredits[5][2] + this.state.courseCredits[5][3] 
+      + 'Credits: ' + (this.state.courseCredits[5][0] + this.state.courseCredits[5][1]
+      + this.state.courseCredits[5][2] + this.state.courseCredits[5][3]
       + this.state.courseCredits[5][4]) + '\n\n'
       + 'Semester 7: ' + this.state.courseNumber[6][0] + ', '
       + this.state.courseNumber[6][1] + ', '
       + this.state.courseNumber[6][2] + ', '
       + this.state.courseNumber[6][3] + ', '
       + this.state.courseNumber[6][4] + '\n'
-      + 'Credits: ' + (this.state.courseCredits[6][0] + this.state.courseCredits[6][1] 
-      + this.state.courseCredits[6][2] + this.state.courseCredits[6][3] 
-      + this.state.courseCredits[6][4]) + '\n\n'  
+      + 'Credits: ' + (this.state.courseCredits[6][0] + this.state.courseCredits[6][1]
+      + this.state.courseCredits[6][2] + this.state.courseCredits[6][3]
+      + this.state.courseCredits[6][4]) + '\n\n'
       + 'Semester 8: ' + this.state.courseNumber[7][0] + ', '
       + this.state.courseNumber[7][1] + ', '
       + this.state.courseNumber[7][2] + ', '
       + this.state.courseNumber[7][3] + ', '
       + this.state.courseNumber[7][4] + '\n'
-      + 'Credits: ' + (this.state.courseCredits[7][0] + this.state.courseCredits[7][1] 
-      + this.state.courseCredits[7][2] + this.state.courseCredits[7][3] 
+      + 'Credits: ' + (this.state.courseCredits[7][0] + this.state.courseCredits[7][1]
+      + this.state.courseCredits[7][2] + this.state.courseCredits[7][3]
       + this.state.courseCredits[7][4]);
     const account = '';
     const token = '';
@@ -144,7 +145,7 @@ export default class App extends React.Component {
         method: 'POST',
         headers: {
         'Authorization': `Basic ${hash}`
-        }, 
+        },
         body: form
     } )
     .then( ( response ) => response.json() )
@@ -158,7 +159,7 @@ export default class App extends React.Component {
 
     this.sendText(this.state.phoneNumber);
   }
-  
+
   render () {
     const {
       phoneNumber,
@@ -171,18 +172,28 @@ export default class App extends React.Component {
           <CHeader/>
           <br/>
           <br/>
-          <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-            <DropdownToggle caret>
-              Button Dropdown
-            </DropdownToggle>
-            <DropdownMenu>
-              <DropdownItem header>Header</DropdownItem>
-              <DropdownItem disabled>Action</DropdownItem>
-              <DropdownItem>Another Action</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Another Action</DropdownItem>
-            </DropdownMenu>
-          </ButtonDropdown>
+
+
+          <div class="center_aligned">
+            <Button color={getCatColor("iastate_catalog")} onClick={function(){
+              //this.setState({
+              //  bgColor: 'blue'
+              //})
+              setCatalog("iastate_catalog");
+              this.setState({
+                color: getCatColor("iastate_catalog"),
+              })
+
+            }.bind(this)
+            }>Iowa State Catalog</Button>
+            <Button color={getCatColor("kstate_catalog")} onClick={function(){
+              setCatalog("kstate_catalog")
+              this.setState({
+                color: getCatColor("kstate_catalog"),
+              })
+            }.bind(this)
+            }>Kansas State Catalog</Button>
+          </div>
           <Container>
             <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
@@ -243,8 +254,8 @@ export default class App extends React.Component {
                 {courseCredits[0][4]} credits
               </Col>
               <Col>
-                {courseCredits[0][0] + courseCredits[0][1] 
-                  + courseCredits[0][2] + courseCredits[0][3] 
+                {courseCredits[0][0] + courseCredits[0][1]
+                  + courseCredits[0][2] + courseCredits[0][3]
                   + courseCredits[0][4]} Credits
               </Col>
             </Row>
@@ -282,8 +293,8 @@ export default class App extends React.Component {
                 {courseCredits[1][4]} credits
               </Col>
               <Col>
-              {courseCredits[1][0] + courseCredits[1][1] 
-                  + courseCredits[1][2] + courseCredits[1][3] 
+              {courseCredits[1][0] + courseCredits[1][1]
+                  + courseCredits[1][2] + courseCredits[1][3]
                   + courseCredits[1][4]} Credits
               </Col>
             </Row>
@@ -321,8 +332,8 @@ export default class App extends React.Component {
                 {courseCredits[2][4]} credits
               </Col>
               <Col>
-              {courseCredits[2][0] + courseCredits[2][1] 
-                  + courseCredits[2][2] + courseCredits[2][3] 
+              {courseCredits[2][0] + courseCredits[2][1]
+                  + courseCredits[2][2] + courseCredits[2][3]
                   + courseCredits[2][4]} Credits
               </Col>
             </Row>
@@ -360,8 +371,8 @@ export default class App extends React.Component {
                 {courseCredits[3][4]} credits
               </Col>
               <Col>
-              {courseCredits[3][0] + courseCredits[3][1] 
-                  + courseCredits[3][2] + courseCredits[3][3] 
+              {courseCredits[3][0] + courseCredits[3][1]
+                  + courseCredits[3][2] + courseCredits[3][3]
                   + courseCredits[3][4]} Credits
               </Col>
             </Row>
@@ -399,8 +410,8 @@ export default class App extends React.Component {
                 {courseCredits[4][4]} credits
               </Col>
               <Col>
-              {courseCredits[4][0] + courseCredits[4][1] 
-                  + courseCredits[4][2] + courseCredits[4][3] 
+              {courseCredits[4][0] + courseCredits[4][1]
+                  + courseCredits[4][2] + courseCredits[4][3]
                   + courseCredits[4][4]} Credits
               </Col>
             </Row>
@@ -438,8 +449,8 @@ export default class App extends React.Component {
                 {courseCredits[5][4]} credits
               </Col>
               <Col>
-              {courseCredits[5][0] + courseCredits[5][1] 
-                  + courseCredits[5][2] + courseCredits[5][3] 
+              {courseCredits[5][0] + courseCredits[5][1]
+                  + courseCredits[5][2] + courseCredits[5][3]
                   + courseCredits[5][4]} Credits
               </Col>
             </Row>
@@ -477,8 +488,8 @@ export default class App extends React.Component {
                 {courseCredits[6][4]} credits
               </Col>
               <Col>
-              {courseCredits[6][0] + courseCredits[6][1] 
-                  + courseCredits[6][2] + courseCredits[6][3] 
+              {courseCredits[6][0] + courseCredits[6][1]
+                  + courseCredits[6][2] + courseCredits[6][3]
                   + courseCredits[6][4]} Credits
               </Col>
             </Row>
@@ -516,8 +527,8 @@ export default class App extends React.Component {
                 {courseCredits[7][4]} credits
               </Col>
               <Col>
-              {courseCredits[7][0] + courseCredits[7][1] 
-                  + courseCredits[7][2] + courseCredits[7][3] 
+              {courseCredits[7][0] + courseCredits[7][1]
+                  + courseCredits[7][2] + courseCredits[7][3]
                   + courseCredits[7][4]} Credits
               </Col>
             </Row>
