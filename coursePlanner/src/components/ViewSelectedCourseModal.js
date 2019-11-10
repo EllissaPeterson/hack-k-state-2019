@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import {getSemesterSeason, getSemesterYear, getNameOfClass, getShortNameOfClass, getClassDescription} from './SharedFunctions.js'
+import {getSemesterSeason, getSemesterYear, getNameOfClass, getShortNameOfClass, getClassDescription, removeClass} from './SharedFunctions.js'
 
 const ViewSelectedCourseModal = (props) => {
   const {
@@ -43,7 +43,7 @@ const ViewSelectedCourseModal = (props) => {
         </ModalBody>
         <ModalFooter>
             {console.log(this)}
-          <Button color="danger" onClick={toggle}>Remove</Button>{' '} {/*TODO make this work*/}
+          <Button color="danger" onClick={toggle}><a onclick={removeClass}>Remove</a></Button>{' '} {/*TODO make this work*/}
           <Button color="secondary" onClick={toggle}>Back</Button>{' '}
         </ModalFooter>
       </Modal>
