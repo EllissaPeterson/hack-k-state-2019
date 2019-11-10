@@ -223,7 +223,7 @@ export default class App extends React.Component {
             <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
                 <br/>
-                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
+                <SemesterModal buttonLabel="Edit" semester={0}/>
               </Col>
               <Col>
                 Semester 1
@@ -262,7 +262,7 @@ export default class App extends React.Component {
             <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
                 <br/>
-                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
+                <SemesterModal buttonLabel="Edit" semester={1}/>
               </Col>
               <Col>
                 Semester 2
@@ -301,7 +301,7 @@ export default class App extends React.Component {
             <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
                 <br/>
-                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
+                <SemesterModal buttonLabel="Edit" semester={2}/>
               </Col>
               <Col>
                 Semester 3
@@ -340,7 +340,7 @@ export default class App extends React.Component {
             <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
                 <br/>
-                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
+                <SemesterModal buttonLabel="Edit" semester={3}/>
               </Col>
               <Col>
                 Semester 4
@@ -379,7 +379,7 @@ export default class App extends React.Component {
             <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
                 <br/>
-                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
+                <SemesterModal buttonLabel="Edit" semester={4}/>
               </Col>
               <Col>
                 Semester 5
@@ -418,7 +418,7 @@ export default class App extends React.Component {
             <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
                 <br/>
-                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
+                <SemesterModal buttonLabel="Edit" semester={5}/>
               </Col>
               <Col>
                 Semester 6
@@ -457,8 +457,8 @@ export default class App extends React.Component {
             <Row style={{backgroundColor: '#81a6f7'}}>
               <Col>
                 <br/>
-                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
-              </Col>
+                <SemesterModal buttonLabel="Edit" semester={6}/>
+                              </Col>
               <Col>
                 Semester 7
               </Col>
@@ -496,8 +496,8 @@ export default class App extends React.Component {
             <Row style={{backgroundColor: '#6692f2'}}>
               <Col>
                 <br/>
-                <SemesterModal buttonLabel="Edit" requirements={["a", "b", "c"]}/>
-              </Col>
+                <SemesterModal buttonLabel="Edit" semester={7}/>
+                              </Col>
               <Col>
                 Semester 8
               </Col>

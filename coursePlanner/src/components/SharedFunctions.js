@@ -3,7 +3,7 @@ import kstate_catalog from '../catalogs/kstate_catalog';
 import current_catalog from '../catalogs/current_catalog';
 //import fs from 'fs';
 
-var courses = [[0],[0],[0],[0],[0],[0],[0],[0]];
+var courses = [[],[],[],[],[],[],[],[]];
 let first_year = 2015;
 
 
@@ -156,9 +156,10 @@ function removeClass(semester_id, class_id)
 function addClass(semester_id, class_id)
 {
   //TODO
-
-  courses[semester_id] = courses[semester_id]+[class_id];
+  
+  courses[semester_id].push(class_id);
   console.log("HEY");
+  console.log(class_id);
 }
 
 
