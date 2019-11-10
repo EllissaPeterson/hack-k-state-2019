@@ -16,7 +16,7 @@ const AddSelectedCourseModal = (props) => {
   return (
     <div>
     {console.log(course)}
-    <Button color="danger" onClick={toggle} size="lg">{getNameOfClass(course)}</Button>
+    <Button color="danger" onClick={toggle} size="lg">{getShortNameOfClass(course)}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
           <br/>
           <br/>

@@ -36,7 +36,7 @@ async function getNameOfClass(class_id)
 */
 function catalog()
 {
-  if (current_catalog == "iastate_catalog"){
+  if (current_catalog.current_catalog === "iastate_catalog"){
     return iastate_catalog;
   }else{
     return kstate_catalog;
