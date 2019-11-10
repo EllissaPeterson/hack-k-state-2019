@@ -17,10 +17,19 @@ const AddSelectedCourseModal = (props) => {
     'white-space':'pre-line'
   }
 
+  const buttonstyle = {
+    //backgroundColor: "#d66113",
+    "margin-top":"0px",
+    "margin-bottom":"-30px",
+    //"padding":"0px",
+    backgroundColor: "#d66113",
+    //"backgroundColor":"#54c759"
+  }
+
   return (
     <div>
     {console.log(course)}
-    <Button color="danger" onClick={toggle} size="lg">{getShortNameOfClass(course)}</Button>
+    <Button style={buttonstyle} onClick={toggle} size="md">{getShortNameOfClass(course)}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
           <br/>
 
