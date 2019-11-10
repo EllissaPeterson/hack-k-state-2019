@@ -62,7 +62,15 @@ function getRemainingDepartments()
 {
   //TODO: Return list of departments.
   let depts = [];
+  /*
   for each (let course in catalog().data){
+    if(!depts.includes(course.dept)){
+      depts.push(course.dept);
+    }
+  }
+  */
+  for(let i = 0; i < catalog().data.length; i++){
+    let course = catalog().data[i]
     if(!depts.includes(course.dept)){
       depts.push(course.dept);
     }

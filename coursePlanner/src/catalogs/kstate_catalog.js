@@ -1,5 +1,5 @@
-export default{[
-  "data":{
+export default{
+  "data":[{
     "course_name": "Accounting for Business Operations",
     "dept": "ACCTG",
     "num": "231",
