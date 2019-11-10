@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import {getSemesterSeason, getSemesterYear, getNameOfClass, getClassDescription, addClass} from './SharedFunctions.js'
+import {getSemesterSeason, getSemesterYear, getNameOfClass, getShortNameOfClass, getClassDescription} from './SharedFunctions.js'
 
 const AddSelectedCourseModal = (props) => {
   const {
@@ -15,6 +15,7 @@ const AddSelectedCourseModal = (props) => {
 
   return (
     <div>
+    {console.log(course)}
     <Button color="danger" onClick={toggle} size="lg">{getNameOfClass(course)}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
           <br/>
@@ -25,7 +26,7 @@ const AddSelectedCourseModal = (props) => {
         </ModalBody>
         <ModalFooter>
             {console.log(this)}
-          <Button color="primary" onClick={addClass}><a onClick={toggle} >Add</a></Button>{' '} {/*TODO make this work*/}
+          <Button color="primary" onClick={toggle}>Add</Button>{' '} {/*TODO make this work*/}
           <Button color="secondary" onClick={toggle}>Back</Button>{' '}
         </ModalFooter>
       </Modal>
