@@ -57,6 +57,11 @@ function getNameOfClass(class_id){
   return name;
 }
 
+function getShortNameOfClass(class_id){
+  let name = catalog().data[class_id].dept + " " + catalog().data[class_id].num;
+  return name;
+}
+
 
 function getRemainingDepartments()
 {
@@ -123,24 +128,31 @@ function addClass(class_id)
   console.log("HEY");
 }
 
+
+
 function getCoursesGivenDepartment(department_id)
 {
   // Course name = Dept + num
-  let coursenames = [];
+  // NEVERMIND RETURN COURSE ID's (indices)
+  //let coursenames = [];
+  let course_ids = [];
 
   for(let i = 0; i < catalog().data.length; i++){
     let course = catalog().data[i]
     if(department_id == course.dept){
-      coursenames.push(course.dept + " " + course.num);
+      //coursenames.push(course.dept + " " + course.num);
+      course_ids.push(i);
     }
   }
 
-  console.log(coursenames);
-  return coursenames;
+  //console.log(coursenames);
+  return course_ids;
+  //return coursenames;
   //return [1,2,3,4,5,6,7,8,9];
 }
 
 export {getNameOfClass};//
+export {getShortNameOfClass};//
 export {getRemainingDepartments};//
 export {getCoursesInSemester};//
 export {getSemesterSeason};//
