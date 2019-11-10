@@ -97,7 +97,7 @@ function getSemesterYear(semester_id)
 function getNameOfDepartment(department_id)
 {
   //TODO
-  return "Office of Memes"
+  return department_id;
 }
 
 function getClassDescription(class_id)
@@ -121,7 +121,19 @@ function addClass(class_id)
 function getCoursesGivenDepartment(department_id)
 {
   //TODO
-  return [1,2,3,4,5,6,7,8,9];
+  // Course name? Dept + num
+  let coursenames = [];
+
+  for(let i = 0; i < catalog().data.length; i++){
+    let course = catalog().data[i]
+    if(department_id == course.dept){
+      coursenames.push(course.dept + " " + course.num);
+    }
+  }
+
+  console.log(coursenames);
+  return coursenames;
+  //return [1,2,3,4,5,6,7,8,9];
 }
 
 export {getNameOfClass};//
