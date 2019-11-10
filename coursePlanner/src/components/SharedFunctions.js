@@ -47,6 +47,10 @@ function catalog()
   }
 }
 
+function setCatalog(catalog){
+  current_catalog.current_catalog = catalog;
+}
+
 function getNameOfClass(class_id){
   //let rawdata = fs.readFileSync('iastate_catalog.json');
   //let data = JSON.parse(rawdata);
@@ -162,3 +166,4 @@ export {getClassDescription};//
 export {removeClass};//
 export {getCoursesGivenDepartment};//
 export {addClass}; //
+export {setCatalog};//

@@ -19,8 +19,13 @@ const AddSelectedCourseModal = (props) => {
     <Button color="danger" onClick={toggle} size="lg">{getShortNameOfClass(course)}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
           <br/>
+
+        <ModalHeader toggle={toggle}>
+          {getSemesterSeason(semester)} {getSemesterYear(semester)}
           <br/>
-        <ModalHeader toggle={toggle}>{getSemesterSeason(semester)} {getSemesterYear(semester)}: {getNameOfClass(course)}</ModalHeader>
+          <br/>
+          {getShortNameOfClass(course)}: {getNameOfClass(course)}
+        </ModalHeader>
         <ModalBody>
           {getClassDescription(course)}
         </ModalBody>
