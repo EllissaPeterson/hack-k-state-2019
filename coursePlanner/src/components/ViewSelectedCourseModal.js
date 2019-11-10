@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-import {getSemesterSeason, getSemesterYear, getNameOfClass, getShortNameOfClass, getClassDescription} from './SharedFunctions.js'
+import {getSemesterSeason, getSemesterYear, getNameOfClass, getShortNameOfClass, getClassDescription, removeClass} from './SharedFunctions.js'
 
 
 
