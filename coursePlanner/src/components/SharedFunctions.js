@@ -1,7 +1,11 @@
-import iastate_catalog from '../catalogs/iastate_catalog'
-import kstate_catalog from '../catalogs/kstate_catalog'
-import current_catalog from '../catalogs/current_catalog'
+import iastate_catalog from '../catalogs/iastate_catalog';
+import kstate_catalog from '../catalogs/kstate_catalog';
+import current_catalog from '../catalogs/current_catalog';
 //import fs from 'fs';
+
+var courses = [[0],[0],[0],[0],[0],[0],[0],[0]];
+let first_year = 2015;
+
 
 var axios = require('axios')
 //const fs = require('fs');
@@ -34,6 +38,8 @@ async function getNameOfClass(class_id)
   //return x;
 }
 */
+
+
 function catalog()
 {
   if (current_catalog.current_catalog === "iastate_catalog"){
@@ -96,19 +102,28 @@ function getRemainingDepartments()
 function getCoursesInSemester(semester_id)
 {
   //TODO given a "semester id" return a list of "course id"s
-  return [1,2,3,4,5,6,7];
+  console.log(courses[semester_id]);
+  return courses[semester_id];
 }
 
 function getSemesterSeason(semester_id)
 {
   //TODO
-  return "Fall"
+  if (semester_id%2 == 0)
+  {
+    return "Fall";
+  }
+  else
+  {
+    return "Spring";
+  }
+  
 }
 
 function getSemesterYear(semester_id)
 {
   //TODO
-  return 2019
+  return first_year+Math.floor(((semester_id)/2));
 }
 
 function getNameOfDepartment(department_id)
@@ -124,15 +139,25 @@ function getClassDescription(class_id)
   //return "'Well, Seymore, I made it, despite your directions.' 'Ah, superintendent Chalmers! I hope you're prepared for an unforgettable luncheon!'"
 }
 
-function removeClass(class_id)
+function removeClass(semester_id, class_id)
 {
   //TODO
-  console.log("LOL bye");
+  let new_class_list = [];
+  for (let i = 0; i < courses.length; i++)
+  {
+    if (courses[i] != class_id)
+    {
+      new_class_list.push(courses[i]);
+    }
+  }
+  courses[semester_id] = new_class_list;
 }
 
-function addClass(class_id)
+function addClass(semester_id, class_id)
 {
   //TODO
+
+  courses[semester_id] = courses[semester_id]+[class_id];
   console.log("HEY");
 }
 
