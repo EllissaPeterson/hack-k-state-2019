@@ -13,6 +13,10 @@ const AddSelectedCourseModal = (props) => {
 
   const toggle = () => setModal(!modal);
 
+  const pstyle = {
+    'white-space':'pre-line'
+  }
+
   return (
     <div>
     {console.log(course)}
@@ -27,7 +31,7 @@ const AddSelectedCourseModal = (props) => {
           {getShortNameOfClass(course)}: {getNameOfClass(course)}
         </ModalHeader>
         <ModalBody>
-          {getClassDescription(course)}
+          <p style={pstyle}>{getClassDescription(course)}</p>
         </ModalBody>
         <ModalFooter>
             {console.log(this)}

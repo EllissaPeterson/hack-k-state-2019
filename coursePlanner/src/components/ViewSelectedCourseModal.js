@@ -13,6 +13,11 @@ const ViewSelectedCourseModal = (props) => {
 
   const toggle = () => setModal(!modal);
 
+  // TODO put pstyle from this file and AddNewCourseModal in same file because this duplicated code is bad
+  const pstyle = {
+    'white-space':'pre-line'
+  }
+
   return (
     <div>
     <Button color="danger" onClick={toggle} size="lg">{getShortNameOfClass(course)}</Button>
@@ -26,7 +31,7 @@ const ViewSelectedCourseModal = (props) => {
           {getShortNameOfClass(course)}: {getNameOfClass(course)}
         </ModalHeader>
         <ModalBody>
-          {getClassDescription(course)}
+          <p style={pstyle}>{getClassDescription(course)}</p>
         </ModalBody>
         <ModalFooter>
             {console.log(this)}
