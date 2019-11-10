@@ -1,3 +1,7 @@
+import { withThemeCreator } from '@material-ui/styles';
+
+var axios = require('axios')
+
 function getRemainingRequirements()
 {
   //TODO: Make this do useful work.
@@ -19,7 +23,12 @@ function getClasses(requirement_id)
 function getNameOfClass(class_id)
 {
   //TODO: Return the name of the class
-  return "EECS 210";
+  let x = axios.post("http://35.224.245.97", {"action" : "getprograms"})
+    .then(res => {
+      return res.data[class_id].course_name;
+  })
+  console.log(x);
+  return x;
 }
 
 function getRemainingDepartments()
